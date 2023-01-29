@@ -4,6 +4,10 @@ import requests
 from datetime import datetime
 import xml.etree.ElementTree as ET
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 TOKEN = os.getenv('NOTION_TOKEN')
 
 
@@ -24,10 +28,9 @@ def usd_course():
 
 
 def get_notion_page(block_id):
-    token = TOKEN
     url = f'https://api.notion.com/v1/blocks/{block_id}/children?page_size=100'
     headers = {
-        'Authorization': 'Bearer ' + token,
+        'Authorization': 'Bearer ' + TOKEN,
         'Content-Type': 'application/json',
         'Notion-Version': '2022-06-28'
     }
