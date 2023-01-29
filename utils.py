@@ -1,7 +1,9 @@
 import os
 
 import requests
+
 from datetime import datetime
+
 import xml.etree.ElementTree as ET
 
 from dotenv import load_dotenv
